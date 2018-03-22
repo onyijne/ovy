@@ -1,16 +1,12 @@
 {
-    "name": "yiisoft/yii2-app-basic",
-    "description": "Yii 2 Basic Project Template",
-    "keywords": ["yii2", "framework", "basic", "project template"],
-    "homepage": "http://www.yiiframework.com/",
+    "name": "developeruz/yii-vue-app",
+    "description": "Yii 2 + Vue.js Basic Project Template",
+    "keywords": ["yii2", "framework", "basic", "project template", "vue.js"],
     "type": "project",
     "license": "BSD-3-Clause",
     "support": {
-        "issues": "https://github.com/yiisoft/yii2/issues?state=open",
-        "forum": "http://www.yiiframework.com/forum/",
-        "wiki": "http://www.yiiframework.com/wiki/",
-        "irc": "irc://irc.freenode.net/yii",
-        "source": "https://github.com/yiisoft/yii2"
+        "issues": "https://github.com/developeruz/yii-vue-app/issues?state=open",
+        "source": "https://github.com/developeruz/yii-vue-app"
     },
     "minimum-stability": "dev",
     "require": {
@@ -40,7 +36,9 @@
         ],
         "post-create-project-cmd": [
             "yii\\composer\\Installer::postCreateProject",
-            "yii\\composer\\Installer::postInstall"
+            "yii\\composer\\Installer::postInstall",
+            "yarn install",
+            "yarn dev"
         ]
     },
     "extra": {
