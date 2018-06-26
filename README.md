@@ -65,6 +65,42 @@ CONFIGURATION
 
 Please, check the [Yii 2 Basic Project Template](https://github.com/yiisoft/yii2-app-basic#configuration) configuration section. 
 
+CREATE VUE.JS TEMPLATE
+----------------------
+
+You can run console command to get a basic vue.js template for your components
+~~~
+php yii make/template --path=app/pages/TestComponent.vue
+~~~
+
+It will create a file TestComponent.vue with the following content 
+```
+ <template>
+     <div>
+ 
+     </div>
+ </template>
+ 
+ <script>
+     export default {
+         data() {
+             return {
+             }
+         },
+         mounted: function () {
+ 
+         },
+         methods: {
+ 
+         },
+         watch: {
+ 
+         }
+     }
+ </script>
+``` 
+
+
 CONTRIBUTING
 -----------------------
 
