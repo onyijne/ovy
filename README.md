@@ -59,6 +59,13 @@ directly under the Web root.
 ~~~
 http://localhost/basic/web/
 ~~~
+If you have a problem with `babel-loader` please run:
+~~~
+npm cache clean -f
+rm -rf node_modules/ package-lock.json
+npm install
+yarn dev
+~~~
 
 CONFIGURATION
 -------------
