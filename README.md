@@ -1,6 +1,6 @@
 <p align="center">
     <a href="https://github.com/yiisoft" target="_blank">
-        <img src="https://onsen.io/images/logo.png" height="100px">
+        <img src="https://goo.gl/images/WBWP39" height="100px">
         <img src="https://png.icons8.com/metro/1600/plus-math.png" height="50px">
         <img src="https://vuejs.org/images/logo.png" height="100px">
         <img src="https://png.icons8.com/metro/1600/plus-math.png" height="50px">
