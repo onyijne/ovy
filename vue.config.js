@@ -1,7 +1,7 @@
 const path = require('path');
 
 const PATHS = {
-    source: path.join(__dirname, 'client'),
+    source: path.join(__dirname, 'src'),
     build: path.join(__dirname, 'web')
 };
 
@@ -18,11 +18,11 @@ module.exports = {
     outputDir: PATHS.build,
     filenameHashing: false,
     productionSourceMap: false,
-    pluginOptions: {
-      sourceDir: PATHS.source
-    },
     configureWebpack: {
-        entry: PATHS.source+'/app.js'
+        entry: PATHS.source+'/app.js',
+        output: {
+          filename: 'app.js'
+        }
       }
     }
   }
