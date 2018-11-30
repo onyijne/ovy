@@ -26,7 +26,9 @@ DIRECTORY STRUCTURE
       controllers/        contains Web controller classes
       mail/               contains view files for e-mails
       models/             contains model classes
+      modules/             contains spplication modules
       runtime/            contains files generated during runtime
+      src/                contains the vue.js templates
       tests/              contains various tests for the basic application
       vendor/             contains dependent 3rd-party packages
       views/              contains view files for the Web application
@@ -56,7 +58,7 @@ at [getcomposer.org](http://getcomposer.org/doc/00-intro.md#installation-nix).
 You can then install this project template using the following command:
 
 ~~~
-php composer.phar create-project --prefer-dist --stability=dev onyijne/ovy basic
+php composer create-project --prefer-dist --stability=dev onyijne/ovy basic
 ~~~
 
 Now you should be able to access the application through the following URL, assuming `basic` is the directory
