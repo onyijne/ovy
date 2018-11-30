@@ -22,10 +22,7 @@ module.exports = {
       sourceDir: PATHS.source
     },
     configureWebpack: {
-      entry: {
-        app: [
-          PATHS.source+'/app.js'
-        ]
+        entry: PATHS.source+'/app.js'
       }
     }
   }
