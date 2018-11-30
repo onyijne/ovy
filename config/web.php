@@ -8,8 +8,8 @@ $config = [
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'aliases' => [
-        '@bower' => '@vendor/bower-asset',
-        '@npm'   => '@vendor/npm-asset',
+        '@bower' => '@app/node_modules',
+        '@npm'   => '@app/node_modules',
     ],
     'components' => [
         'request' => [
@@ -57,7 +57,13 @@ $config = [
                 '<module:\w+>/<controller:\w+>/<action:(\w|-)+>' => '<module>/<controller>/<action>',
                 '<controller:\w+>/<action:(\w|-)+>' => '<controller>/<action>'
             ],
-        ]
+        ],
+        'assetManager' => [
+            'bundles' => array_merge(
+                require(__DIR__ . '/assets-default.php'),
+                require(__DIR__ . '/assets-extended.php')
+            ),
+        ],
     ],
     'params' => $params,
 ];

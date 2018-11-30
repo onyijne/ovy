@@ -34,3 +34,6 @@ tests/_support/_generated
 
 #generated js file
 web/app.js
+
+#node modules
+app/node_modules

@@ -1,18 +1,19 @@
 {
-    "name": "developeruz/yii-vue-app",
-    "description": "Yii 2 + Vue.js Basic Project Template",
-    "keywords": ["yii2", "framework", "basic", "project template", "vue.js"],
+    "name": "onyijne/ovy",
+    "description": "Onsen-UI 2 + Vue.js 2 + Yii2 Basic Project Template",
+    "keywords": ["Onsen UI2", "vue.js2","yii2", "framework", "basic", "project template"],
     "type": "project",
     "license": "BSD-3-Clause",
     "support": {
-        "issues": "https://github.com/developeruz/yii-vue-app/issues?state=open",
-        "source": "https://github.com/developeruz/yii-vue-app"
+        "issues": "https://github.com/onyijne/ovy/issues?state=open",
+        "source": "https://github.com/onyijne/ovy"
     },
     "minimum-stability": "dev",
+    "prefer-stable": true,
     "require": {
-        "php": ">=5.4.0",
+        "php": ">=7.1.0",
         "yiisoft/yii2": "~2.0.14",
-        "yiisoft/yii2-bootstrap": "~2.0.0",
+        "yiisoft/yii2-bootstrap4": "~1.0.0",
         "yiisoft/yii2-swiftmailer": "~2.0.0"
     },
     "require-dev": {
@@ -32,14 +33,22 @@
     },
     "scripts": {
         "post-install-cmd": [
-            "yii\\composer\\Installer::postInstall"
+            "yii\\composer\\Installer::postInstall",
+            "yarn install"
         ],
         "post-create-project-cmd": [
             "yii\\composer\\Installer::postCreateProject",
             "yii\\composer\\Installer::postInstall",
-            "yarn install",
-            "yarn dev"
+            "yarn install"
         ]
+    },
+    "provide": {
+        "bower-asset/jquery": "*",
+        "bower-asset/jquery.inputmask": "*",
+        "bower-asset/bootstrap": "*",
+        "bower-asset/punycode": "*",
+        "bower-asset/typeahead.js": "*",
+        "bower-asset/yii2-pjax": "*"
     },
     "extra": {
         "yii\\composer\\Installer::postCreateProject": {
