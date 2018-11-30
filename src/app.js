@@ -1,4 +1,4 @@
-import router from './routes.js'
+import router from './router'
 
 require('./bootstrap');
 

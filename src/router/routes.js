@@ -1,52 +1,18 @@
-import Vue from 'vue'
 import VueRouter from 'vue-router'
-import HomePage from '@/pages/HomePage.vue'
-import AdminPage from '@/pages/AdminPage.vue'
-import ManagePage from '@/pages/ManagePage.vue'
 
-Vue.use(VueRouter)
+let LandingPage = require('./pages/LandingPage.vue');
+let AboutPage = require('./pages/AboutPage.vue');
+let LoginPage = require('./pages/LoginPage.vue');
 
-const routes = [
-    {
-        path : '/',
-        name : 'home-page',
-        component : HomePage
-    },
-    {
-        path: '/admin',
-        meta: {
-            auth: {
-                roles: 'admin',
-                redirect: {name: 'admin'},
-                forbiddenRedirect: '/admin/403'
-            }
-        },
-        component: AdminPage
-    }, {
-        path: '/manage',
-        meta: {auth: ['admin', 'manager']},
-        component: ManagePage
-    }/*, {
-        path: '/account',
-        meta: {auth: true},
-        component: require('./Account')
-    }, {
-        path: '/private',
-        meta: {auth: {"people": "administrator", "products": "superadmin"}},
-        component: require('./Account')
-    }, {
-        path: '/login',
-        meta: {auth: false},
-        component: require('./Login')
-    }, {
-        path: '/contact',
-        component: require('./Contact')
-    }*/
-]
+let routes = [
+    { path: '/', component: LandingPage, name: 'landing'},
+    { path: '/about', component: AboutPage, name: 'about'},
+    { path: '/login', component: LoginPage, name: 'login'}
+];
 
-const router = new VueRouter({
-    mode : 'history',
+let router = new VueRouter({
+    mode: 'history',
     routes
-})
+});
 
-export default router
+export default router;
