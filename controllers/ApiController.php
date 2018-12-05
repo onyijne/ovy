@@ -30,7 +30,7 @@ class ApiController extends Controller
      */
     public function beforeAction($action)
     {
-        \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+        Yii::$app->response->format = Response::FORMAT_JSON;
         return parent::beforeAction($action);
     }
 
@@ -40,7 +40,7 @@ class ApiController extends Controller
     public function afterAction($action, $result)
     {
         $result = parent::afterAction($action, $result);
-        $result['token'] = \Yii::$app->request->csrfToken;
+        $result['token'] = Yii::$app->request->csrfToken;
         return $result;
     }
 

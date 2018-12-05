@@ -28,8 +28,8 @@
     "@vue/cli-service": "^3.0.5",
     "babel-eslint": "^10.0.1",
     "eslint": "^5.8.0",
-    "eslint-plugin-vue": "^5.0.0-0",
-    "vue-template-compiler": "^2.5.17"
+    "eslint-plugin-vue": "^5.0.0",
+    "vue-template-compiler": "^2.5.17",
     "babel-core": "^6.26.3",
     "node-sass": "^4.9.4",
     "sass": "^1.14.3",
