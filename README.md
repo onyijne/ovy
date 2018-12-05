@@ -1,15 +1,3 @@
-<p align="center">
-    <a href="https://github.com/yiisoft" target="_blank">
-        <img src="https://goo.gl/images/WBWP39" height="100px">
-        <img src="https://png.icons8.com/metro/1600/plus-math.png" height="50px">
-        <img src="https://vuejs.org/images/logo.png" height="100px">
-        <img src="https://png.icons8.com/metro/1600/plus-math.png" height="50px">
-        <img src="https://avatars0.githubusercontent.com/u/993323" height="100px">
-    </a>
-    <h1 align="center">Onsen UI + Vue.js  + Yii 2 Project Template</h1>
-    <br>
-</p>
-
 This is a skeleton [Onsen UI](https://onsen.io/) and [Vue.js](https://vuejs.org/) application integrated with [Yii 2](http://www.yiiframework.com/) as a backend.
 
 The template contains examples of using Onsen UI with Vue.js and Yii2 including ajax request with enabled CSRF.
@@ -19,16 +7,16 @@ Assets management is done via npm, meaning Yii2 only handles server side and not
 DIRECTORY STRUCTURE
 -------------------
 
-      app/                contains all onsen ui - vue.js templates
       assets/             contains assets definition
       commands/           contains console commands (controllers)
       config/             contains application configurations
       controllers/        contains Web controller classes
       mail/               contains view files for e-mails
       models/             contains model classes
-      modules/             contains spplication modules
+      modules/            contains application modules
+      node_modules        contains npm packages
       runtime/            contains files generated during runtime
-      src/                contains the vue.js templates
+      src/                contains the onsen-ui and vue.js templates
       tests/              contains various tests for the basic application
       vendor/             contains dependent 3rd-party packages
       views/              contains view files for the Web application
@@ -58,20 +46,24 @@ at [getcomposer.org](http://getcomposer.org/doc/00-intro.md#installation-nix).
 You can then install this project template using the following command:
 
 ~~~
-php composer create-project --prefer-dist --stability=dev onyijne/ovy basic
+php composer create-project --prefer-dist --stability=dev onyijne/ovy ovy
 ~~~
 
-Now you should be able to access the application through the following URL, assuming `basic` is the directory
+Now you should be able to access the application through the following URL, assuming `ovy` is the directory
 directly under the Web root. **NEVER TRY THIS IN PRODUCTION**
 
 ~~~
-http://localhost/basic/web/
+http://localhost/ovy/web/
+~~~
+
+~~~
+To populate assets use `yarn serve` during developement and `yarn build` for production
 ~~~
 
 CONFIGURATION
 -------------
 
-Please, check the [Yii 2 Basic Project Template](https://github.com/yiisoft/yii2-app-basic#configuration) configuration section. 
+Please, check the [Yii 2 Basic Project Template](https://github.com/yiisoft/yii2-app-basic#configuration) configuration section.
 
 CREATE VUE.JS TEMPLATE
 ----------------------
