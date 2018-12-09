@@ -36,4 +36,4 @@ tests/_support/_generated
 web/app.js
 
 #node modules
-app/node_modules
+/node_modules

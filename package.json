@@ -2,10 +2,11 @@
   "name": "ovy",
   "version": "1.0.0",
   "private": true,
+  "main": "webpack.config.js",
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build --no-clean",
-    "lint": "vue-cli-service lint"
+    "serve": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js --open",
+    "build": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "lint": "node_modules/eslint/bin/eslint"
   },
   "dependencies": {   
     "vue": "^2.5.17",
@@ -23,19 +24,19 @@
     "yii2-pjax": "^2.0.6"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^3.0.5",
-    "@vue/cli-plugin-eslint": "^3.0.5",
-    "@vue/cli-service": "^3.0.5",
+    "cross-env": "~5.2.0",
+    "laravel-mix": "~3.0.0",
     "babel-eslint": "^10.0.1",
     "eslint": "^5.8.0",
     "eslint-plugin-vue": "^5.0.0",
     "vue-template-compiler": "^2.5.17",
+    "vue-loader": "~15.4.2",
     "babel-core": "^6.26.3",
-    "node-sass": "^4.9.4",
-    "sass": "^1.14.3",
-    "sass-loader": "^7.1.0",
+    "babel-loader": "^8.0.4",
     "standard": "^12.0.1",
-    "strip-ansi": "^5.0.0"
+    "strip-ansi": "^5.0.0",
+    "webpack": "~4.27.1",
+    "webpack-dev-server": "~3.1.10"
   },
   "peerDependencies": {
     "popper.js": "^1.14.3"
@@ -46,8 +47,8 @@
       "node": true
     },
     "extends": [
-      "plugin:vue/essential",
-      "eslint:recommended"
+      "eslint:recommended",
+      "plugin:vue/recommended"
     ],
     "rules": {},
     "parserOptions": {
