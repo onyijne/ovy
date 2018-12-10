@@ -33,8 +33,7 @@
     "scripts": {
         "post-install-cmd": [
             "yii\\composer\\Installer::postInstall",
-            "yarn install",
-            "yarn serve"
+            "yarn install"
         ],
         "post-create-project-cmd": [
             "yii\\composer\\Installer::postCreateProject",
