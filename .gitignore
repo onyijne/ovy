@@ -32,8 +32,8 @@ tests/_support/_generated
 #vagrant folder
 /.vagrant
 
-#generated js file
-web/app.js
+#webpack generated files
+web/assets/*
 
 #node modules
 /node_modules
