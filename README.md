@@ -27,13 +27,11 @@ DIRECTORY STRUCTURE
 REQUIREMENTS
 ------------
 
-The minimum requirement by this project template that your Web server supports PHP 7.1.0. and you have node.js, yarn and vue-cli 3 installed
+The minimum requirement by this project template that your Web server supports PHP 7.1.0. and you have node.js, yarn installed
 
 If you do not have **Node.js** installed you can [install it by following the instructions](https://nodejs.org/en/download/)
 
 If you do not have **Yarn** installed you can [install it by following the instructions](https://yarnpkg.com/lang/en/docs/install/)
-
-If you do not have **Vue-Cli** installed you may install it with `yarn global add @vue/cli`
 
 INSTALLATION
 ------------
