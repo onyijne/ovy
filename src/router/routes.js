@@ -1,7 +1,7 @@
 import VueRouter from 'vue-router'
 
-let AboutPage = require('../pages/AboutPage.vue')
-let LoginPage = require('../pages/LoginPage.vue')
+import AboutPage from '../pages/AboutPage.vue'
+import LoginPage from '../pages/LoginPage.vue'
 
 let routes = [
   { path: '/about', component: AboutPage, name: 'about' },

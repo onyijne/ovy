@@ -9,7 +9,8 @@
 
 <script>
   export default {
-    data() {
+    name: 'AboutPage',
+    data () {
       return {}
     }
   }

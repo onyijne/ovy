@@ -1,5 +1,4 @@
 const path = require('path')
-const webpack = require('webpack')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
 const PATHS = {
@@ -7,7 +6,7 @@ const PATHS = {
   build: path.join(__dirname, 'web/assets')
 }
 
-module.exports = {
+const configs = {
   entry: PATHS.source + '/app.js',
   output: {
     path: PATHS.build,
@@ -22,7 +21,8 @@ module.exports = {
       },
       {
         test: /\.js$/,
-        loader: 'babel-loader'
+        loader: 'babel-loader',
+        exclude: '/node_modules/'
       },
       {
         test: /\.css$/,
@@ -51,14 +51,15 @@ module.exports = {
       }
     ]
   },
-  devServer: {
-    contentBase: PATHS.build,
-    hot: true
+  resolve: {
+    alias: {
+      'vue$': 'vue/dist/vue.esm.js'
+      // 'vueonsen$': 'vue-onsenui/esm/index.js'
+    }
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
-    new VueLoaderPlugin({
-      compiler: require('vue-template-compiler')
-    })
+    new VueLoaderPlugin()
   ]
 }
+
+module.exports = configs
