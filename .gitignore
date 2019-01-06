@@ -38,3 +38,4 @@ web/assets/*
 #node modules
 /node_modules
 
+/web/test.dev-error.log
