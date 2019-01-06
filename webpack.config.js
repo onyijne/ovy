@@ -1,5 +1,7 @@
 const path = require('path')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
+const nodeExternals = require('webpack-node-externals')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 const PATHS = {
   source: path.join(__dirname, 'src'),
@@ -13,6 +15,12 @@ const configs = {
     publicPath: '/assets/',
     filename: 'app.js'
   },
+  target: 'node',
+  devServer: {
+    contentBase: PATHS.build,
+    port: 7700
+  },
+  externals: [nodeExternals()],
   module: {
     rules: [
       {
@@ -21,26 +29,39 @@ const configs = {
       },
       {
         test: /\.js$/,
-        loader: 'babel-loader',
-        exclude: '/node_modules/'
+        exclude: '/node_modules/',
+        use: {
+          loader: 'babel-loader'
+        }
       },
       {
         test: /\.css$/,
         use: [
-          'vue-style-loader',
-          'css-loader'
+          'vue-style-loader', 'style-loader', MiniCssExtractPlugin.loader, 'css-loader'
         ]
       },
       {
-        test: /\.(png|svg|jpg|gif)$/,
+        test: /\.(png|svg|jpe?g|gif)$/,
         use: [
-          'file-loader'
+          'file-loader',
+          {
+            loader: 'image-webpack-loader',
+            options: {
+              bypassOnDebug: true
+            }
+          }
         ]
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/,
         use: [
-          'file-loader'
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'fonts/'
+            }
+          }
         ]
       },
       {
@@ -53,12 +74,15 @@ const configs = {
   },
   resolve: {
     alias: {
-      'vue$': 'vue/dist/vue.esm.js'
-      // 'vueonsen$': 'vue-onsenui/esm/index.js'
+      'vue$': 'vue/dist/vue.esm.js',
+      'vueonsen$': 'vue-onsenui/esm/index.js'
     }
   },
   plugins: [
-    new VueLoaderPlugin()
+    new VueLoaderPlugin(),
+    new MiniCssExtractPlugin({
+      filename: 'style.css'
+    })
   ]
 }
 
