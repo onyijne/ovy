@@ -5,9 +5,6 @@
 
 use app\widgets\Alert;
 use yii\helpers\Html;
-use yii\bootstrap\Nav;
-use yii\bootstrap\NavBar;
-use yii\widgets\Breadcrumbs;
 use app\assets\AppAsset;
 
 AppAsset::register($this);
@@ -27,8 +24,8 @@ AppAsset::register($this);
 <?php $this->beginBody() ?>
 
 <div class="wrap" id="app">
-    <div class="container">
-        <nav id="w0" class="navbar-inverse navbar-fixed-top navbar">
+   <v-ons-page>
+        <nav id="w0" class="navbar-default navbar-fixed-top navbar">
             <div class="container">
                 <div class="navbar-header">
                     <router-link to="/" class="navbar-brand">My Application</router-link>
@@ -45,6 +42,9 @@ AppAsset::register($this);
                         <li :class="{'active' : isActiveMenu('/login')}">
                             <router-link to="/login">Login</router-link>
                         </li>
+                        <li :class="{'active' : isActiveMenu('/contact')}">
+                            <router-link to="/contact">Contact</router-link>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -55,8 +55,7 @@ AppAsset::register($this);
         <div v-if="this.$route.matched.length == 0">
             <?= $content ?>
         </div>
-
-    </div>
+    </v-ons-page>
 </div>
 
 <footer class="footer">

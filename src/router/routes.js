@@ -1,16 +1,18 @@
 import VueRouter from 'vue-router'
 
+import HomePage from '../pages/HomePage.vue'
 import AboutPage from '../pages/AboutPage.vue'
 import LoginPage from '../pages/LoginPage.vue'
+import ContactPage from '../pages/ContactPage.vue'
 
-let routes = [
+var routes = [
+  { path: '/', component: HomePage, name: 'home' },
   { path: '/about', component: AboutPage, name: 'about' },
-  { path: '/login', component: LoginPage, name: 'login' }
+  { path: '/login', component: LoginPage, name: 'login' },
+  { path: '/contact', component: ContactPage, name: 'contact' }
 ]
 
-let router = new VueRouter({
+export default new VueRouter({
   mode: 'history',
   routes
 })
-
-export default router

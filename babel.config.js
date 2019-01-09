@@ -1,7 +1,7 @@
-const config = {
+var config = {
   presets: [
-    ['@vue/app'],
-    ['@babel/preset-env', { modules: false }]
+    ['@vue/app']
+    // ['@babel/preset-env', { modules: false }]
   ],
   plugins: [
     ['@babel/plugin-transform-modules-commonjs', {

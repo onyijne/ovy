@@ -10,13 +10,11 @@ Vue.use(VueOnsen)
 
 require('./bootstrap')
 
-window.Vue = Vue
-
 window.app = new Vue({
   el: '#app',
   router,
   data: {
-
+    openSide: false
   },
   methods: {
     isActiveMenu (path) {
