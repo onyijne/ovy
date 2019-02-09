@@ -1,7 +1,5 @@
 const path = require('path')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
-// const nodeExternals = require('webpack-node-externals')
-// const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 const PATHS = {
   source: path.join(__dirname, 'src'),
@@ -20,12 +18,10 @@ const configs = {
     contentBase: PATHS.build,
     port: 7700
   },
-  // externals: [nodeExternals()],
   module: {
     rules: [
       {
         test: /\.vue$/,
-        // exclude: '/node_modules/',
         use: {
           loader: 'vue-loader',
           options: { extractCSS: true, optimizeSSR: false }

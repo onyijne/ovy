@@ -55,16 +55,15 @@ AppAsset::register($this);
         <div v-if="this.$route.matched.length == 0">
             <?= $content ?>
         </div>
+        <footer class="footer">
+            <div class="container">
+                <p class="pull-left">&copy; My Company <?= date('Y') ?></p>
+
+                <p class="pull-right">Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></p>
+            </div>
+        </footer>
     </v-ons-page>
 </div>
-
-<footer class="footer">
-    <div class="container">
-        <p class="pull-left">&copy; My Company <?= date('Y') ?></p>
-
-        <p class="pull-right">Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></p>
-    </div>
-</footer>
 
 <?php $this->endBody() ?>
 </body>
