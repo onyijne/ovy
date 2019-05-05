@@ -4,9 +4,9 @@
   "private": true,
   "main": "index.js",
   "scripts": {
-    "serve": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --mode=development",
+    "serve": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --hotOnly --mode=development",
     "build": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules  --mode=production",
-    "lint": "node_modules/eslint/bin/eslint --fix --ext .js,.vue src"
+    "lint": "node_modules/eslint/bin/eslint.js"
   },
   "dependencies": {
     "axios": "0.18.0",

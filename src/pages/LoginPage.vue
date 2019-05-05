@@ -1,7 +1,8 @@
 <template>
-    <div>
-
-        <div v-if="is_logged_in">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div v-if="is_logged_in">
             <h1>User was successfully logged in. Found user id {{current_user}}</h1>
         </div>
         <div class="form-horizontal" v-else>
@@ -49,6 +50,8 @@
                 To modify the username/password, please check out the code <code>app\models\User::$users</code>.
             </div>
         </div>
+        </div>
+      </div>
     </div>
 </template>
 
@@ -78,7 +81,7 @@
                     this.password_error = 'Password cannot be blank.';
                 }
 
-                if(this.password_error.length == 0 && this.login_error.length == 0) {
+                if(this.password_error.length === 0 && this.login_error.length === 0) {
                     axios({
                         method: 'post',
                         url: '/api/login',
@@ -90,7 +93,7 @@
                         }
                     }).then((response) => {
                         this.refreshCSRFToken(response.data.token);
-                        if (response.data.result == 'success') {
+                        if (response.data.result === 'success') {
                             this.is_logged_in = true;
                             this.current_user = response.data.user_id;
                         } else {

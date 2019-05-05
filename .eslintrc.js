@@ -9,7 +9,7 @@ module.exports = {
     ],
     "rules": {
       "no-console": "off",
-      "vue/name-property-casing": ["error", "PascalCase" | "kebab-case"]
+      "vue/name-property-casing": [1, "kebab-case", "error"]
     },
     "parserOptions": {
       "parser": "babel-eslint",

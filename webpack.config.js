@@ -1,5 +1,6 @@
 const path = require('path')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
+const webpack = require('webpack')
 
 const PATHS = {
   source: path.join(__dirname, 'src'),
@@ -16,7 +17,8 @@ const configs = {
   target: 'node',
   devServer: {
     contentBase: PATHS.build,
-    port: 7700
+    port: 7700,
+    hot: true
   },
   module: {
     rules: [
@@ -80,7 +82,8 @@ const configs = {
     }
   },
   plugins: [
-    new VueLoaderPlugin()
+    new VueLoaderPlugin(),
+    new webpack.HotModuleReplacementPlugin()
   ]
 }
 

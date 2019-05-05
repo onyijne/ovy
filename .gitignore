@@ -39,3 +39,4 @@ web/assets/*
 /node_modules
 
 /web/test.dev-error.log
+/runtime/*

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="main">
     <h1>Contact page</h1>
     <p>
       This is the Contact page.
@@ -8,6 +8,7 @@
 </template>
 
 <script>
+
   export default {
     name: 'ContactPage',
     data () {

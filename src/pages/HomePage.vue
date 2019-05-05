@@ -1,13 +1,20 @@
 <template>
-  <div>
-    <h1>Home page</h1>
-    <p>
-      This is the Home page.
-    </p>
+  <div class="container home">
+    <div class="row">
+      <div class="col-12">
+        <div class="jumbotron">
+          <h1>OVY Template</h1>
+          <p class="lead">
+            Onsen, Vue & Yii template 
+          </p>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
+
   export default {
     name: 'HomePage',
     data () {
@@ -15,3 +22,7 @@
     }
   }
 </script>
+<style lang='css' scoped>
+  .home{height: auto;}
+</style>
+

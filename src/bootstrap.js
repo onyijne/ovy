@@ -6,10 +6,16 @@
 import Axios from 'axios'
 import Vue from 'vue'
 import onsenui from 'onsenui'
+import BootstrapVue from 'bootstrap-vue'
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
+
+Vue.use(BootstrapVue)
 
 window.Vue = Vue
 window.axios = Axios
 window.onsenui = onsenui
+window.BootstrapVue = BootstrapVue
 
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest'
 

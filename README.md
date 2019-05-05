@@ -1,8 +1,8 @@
 This is a skeleton [Onsen UI](https://onsen.io/) and [Vue.js](https://vuejs.org/) application integrated with [Yii 2](http://www.yiiframework.com/) as a backend.
 
-The template contains examples of using Onsen UI with Vue.js and Yii2 including ajax request with enabled CSRF.
+The template contains examples of using Onsen UI with Vue.js and Yii2, with the ability to rapidly develop a native looking ajax powered app with CSRF enabled.
 
-Assets management is done via npm, meaning Yii2 only handles server side and nothing else.
+Assets management is done via npm.
 
 DIRECTORY STRUCTURE
 -------------------
@@ -27,19 +27,25 @@ DIRECTORY STRUCTURE
 REQUIREMENTS
 ------------
 
-The minimum requirement by this project template that your Web server supports PHP 7.1.0. and you have node.js, yarn installed
+### Development
+
+The minimum requirement is that your Web server supports PHP 7.1.0. and you have node.js, yarn, and composer installed
 
 If you do not have **Node.js** installed you can [install it by following the instructions](https://nodejs.org/en/download/)
 
 If you do not have **Yarn** installed you can [install it by following the instructions](https://yarnpkg.com/lang/en/docs/install/)
 
+If you do not have [Composer](http://getcomposer.org/), you may install it by following the instructions
+at [getcomposer.org](http://getcomposer.org/doc/00-intro.md#installation-nix).
+
+### Production
+
+The minimum requirement is that your Web server supports PHP 7.1.0.
+
 INSTALLATION
 ------------
 
 ### Install via Composer
-
-If you do not have [Composer](http://getcomposer.org/), you may install it by following the instructions
-at [getcomposer.org](http://getcomposer.org/doc/00-intro.md#installation-nix).
 
 You can then install this project template using the following command:
 
