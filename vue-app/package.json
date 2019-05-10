@@ -1,0 +1,48 @@
+{
+  "name": "ovy",
+  "version": "2.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "vue-cli-service build --watch --modern",
+    "build": "vue-cli-service build --modern",
+    "inspect": "vue-cli-service inspect",
+    "lint": "vue-cli-service lint",
+    "test:unit": "vue-cli-service test:unit"
+  },
+  "dependencies": {
+    "axios": "0.18.0",
+    "bootstrap": "4.3.1",
+    "bootstrap-vue": "*",
+    "core-js": "^2.6.5",
+    "jquery": "^3.4.1",
+    "jquery.inputmask": "^3.3.4",
+    "onsenui": "2.10.8",
+    "popper.js": "^1.14.6",
+    "portal-vue": "^2.1.4",
+    "punycode": "^2.1.1",
+    "register-service-worker": "^1.6.2",
+    "typeahead.js": "^0.11.1",
+    "vue": "^2.6.10",
+    "vue-onsenui": "2.6.2",
+    "vue-router": "3.0.2",
+    "vuex": "^3.0.1",
+    "yii2-pjax": "^2.0.7"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^3.7.0",
+    "@vue/cli-plugin-eslint": "^3.7.0",
+    "@vue/cli-plugin-pwa": "^3.7.0",
+    "@vue/cli-plugin-unit-jest": "^3.7.0",
+    "@vue/cli-service": "^3.7.0",
+    "@vue/test-utils": "1.0.0-beta.29",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-eslint": "10.0.1",
+    "babel-jest": "^23.6.0",
+    "eslint-plugin-vue": "^5.2.2",
+    "eslint-config-prettier": "^4.2.0",
+    "node-sass": "^4.9.0",
+    "sass-loader": "^7.1.0",
+    "standard": "^12.0.1",
+    "vue-template-compiler": "^2.6.10"
+  }
+}
