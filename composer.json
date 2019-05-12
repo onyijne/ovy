@@ -32,14 +32,11 @@
     },
     "scripts": {
         "post-install-cmd": [
-            "yii\\composer\\Installer::postInstall",
-            "cd vue-app && yarn install"
+            "yii\\composer\\Installer::postInstall"
         ],
         "post-create-project-cmd": [
             "yii\\composer\\Installer::postCreateProject",
-            "yii\\composer\\Installer::postInstall",
-            "cd vue-app && yarn install",
-            "yarn run dev"
+            "yii\\composer\\Installer::postInstall"
         ]
     },
     "provide": {

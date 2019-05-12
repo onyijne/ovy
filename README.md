@@ -53,6 +53,8 @@ You can install this project template using the following command:
 php composer create-project --prefer-dist --stability=dev onyijne/ovy ovy
 ~~~
 
+Then `cd ovy/vue-app` and run `yarn install`
+
 Now you should be able to access the application through the following URL, assuming `ovy` is the directory
 directly under the Web root. **NEVER TRY THIS IN PRODUCTION**
 
