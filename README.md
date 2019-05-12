@@ -1,6 +1,6 @@
 This is a skeleton [Onsen UI](https://onsen.io/) and [Vue.js](https://vuejs.org/) application integrated with [Yii 2](http://www.yiiframework.com/) as a backend.
 
-The template contains examples of using Onsen UI with Vue.js and Yii2, with the ability to rapidly develop a native looking ajax powered app with CSRF enabled.
+The template was built using vue-cli 3, Vuex support and contains examples of using Onsen UI with Vue.js and Yii2, with the ability to rapidly develop a native looking ajax powered app with CSRF enabled.
 
 Assets management is done via npm.
 
@@ -16,7 +16,7 @@ DIRECTORY STRUCTURE
       modules/            contains application modules
       node_modules        contains npm packages
       runtime/            contains files generated during runtime
-      src/                contains the onsen-ui and vue.js templates
+      vue-app/                contains the onsen-ui and vue.js templates
       tests/              contains various tests for the basic application
       vendor/             contains dependent 3rd-party packages
       views/              contains view files for the Web application
@@ -47,7 +47,7 @@ INSTALLATION
 
 ### Install via Composer
 
-You can then install this project template using the following command:
+You can install this project template using the following command:
 
 ~~~
 php composer create-project --prefer-dist --stability=dev onyijne/ovy ovy
@@ -61,13 +61,13 @@ http://localhost/ovy/web/
 ~~~
 
 ~~~
-To populate assets use `yarn serve` during developement and `yarn build` for production
+To populate assets use `yarn dev` during developement and `yarn build` for production
 ~~~
 
 CONFIGURATION
 -------------
 
-Please, check the [Yii 2 Basic Project Template](https://github.com/yiisoft/yii2-app-basic#configuration) configuration section.
+Please, check the [Yii 2 Basic Project Template](https://github.com/yiisoft/yii2-app-basic#configuration) and [Vue.js](https://cli.vuejs.org/config/) configuration sections.
 
 CREATE VUE.JS TEMPLATE
 ----------------------

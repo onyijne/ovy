@@ -5,6 +5,7 @@ const PATHS = {
   build: path.join(__dirname, '../web/auto')
 }
 module.exports = {
+  publicPath: '/auto/',
   outputDir: PATHS.build,
   assetsDir: '',
   filenameHashing: false,

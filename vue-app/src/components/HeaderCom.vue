@@ -38,7 +38,7 @@
                   :to="page.link"
                   class="nav-link"
                 >
-                  {{ page.name }}
+                  <span><v-ons-icon :icon="page.icon"></v-ons-icon></span> {{ page.title }}
                 </router-link>
               </li>
             </b-navbar-nav>
@@ -55,38 +55,10 @@ export default {
   name: 'HeaderCom',
   computed: {
     pages () {
-      return [
-        {
-          'id': 1,
-          'name': 'Home',
-          'link': '/'
-        },
-        {
-          'id': 2,
-          'name': 'About',
-          'link': '/about'
-        },
-        {
-          'id': 3,
-          'name': 'Contact',
-          'link': '/contact'
-        },
-        {
-          'id': 4,
-          'name': 'Login',
-          'link': '/login'
-        }
-      ]
+      return this.$store.getters.appMenus
     },
-    brand () {
-      return {
-        name: 'Sajflow',
-        logo: '/logo.png',
-        phone: '234-805-7477-738',
-        email: 'contact@sajflow.com',
-        address: 'Port Harcourt, Rivers State, Nigeria.'
-      }
-    }
+    brand () { return this.$store.getters.brand },
+    isGuest () { return this.$store.getters.isGuest },
   },
   methods: {
     isActiveMenu (path) {

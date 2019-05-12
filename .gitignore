@@ -34,6 +34,7 @@ tests/_support/_generated
 
 #webpack generated files
 web/assets/*
+web/auto
 
 #node modules
 /vue-app/node_modules

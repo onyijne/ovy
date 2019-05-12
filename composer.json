@@ -39,7 +39,7 @@
             "yii\\composer\\Installer::postCreateProject",
             "yii\\composer\\Installer::postInstall",
             "yarn install",
-            "yarn serve"
+            "yarn run dev"
         ]
     },
     "provide": {

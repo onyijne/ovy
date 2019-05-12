@@ -11,6 +11,9 @@ window.Vue = Vue
 window.axios = Axios
 window.onsenui = onsenui
 
+Vue.prototype.axios = Axios
+Vue.prototype.$http = Axios
+
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest'
 
 /**

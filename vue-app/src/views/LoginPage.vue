@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
       <div class="col-12">
-        <div v-if="is_logged_in">
+        <div v-if="!isGuest">
           <h1>User was successfully logged in. Found user id {{ current_user }}</h1>
         </div>
         <div
@@ -14,7 +14,7 @@
 
           <div
             class="form-group field-loginform-username required"
-            :class="{'has-error': login_error.length != 0}"
+            :class="{'has-error': login_error.length !== 0}"
           >
             <label
               for="loginform-username"
@@ -30,11 +30,11 @@
                 autofocus="autofocus"
                 aria-required="true"
                 class="form-control"
-                :aria-invalid="login_error.length != 0"
+                :aria-invalid="login_error.length !== 0"
               >
             </div>
             <div
-              v-if="login_error.length != 0"
+              v-if="login_error.length !== 0"
               class="col-lg-8"
             >
               <p class="help-block help-block-error">
@@ -45,7 +45,7 @@
 
           <div
             class="form-group field-loginform-password required"
-            :class="{'has-error': password_error.length != 0}"
+            :class="{'has-error': password_error.length !== 0}"
           >
             <label
               for="loginform-password"
@@ -60,11 +60,11 @@
                 type="password"
                 aria-required="true"
                 class="form-control"
-                :aria-invalid="password_error.length != 0"
+                :aria-invalid="password_error.length !== 0"
               >
             </div>
             <div
-              v-if="password_error.length != 0"
+              v-if="password_error.length !== 0"
               class="col-lg-8"
             >
               <p class="help-block help-block-error ">
@@ -111,61 +111,45 @@
 </template>
 
 <script>
-    export default {
-        data() {
-            return {
-                is_logged_in: false,
-                current_user: null,
-                login: '',
-                password: '',
-                remember_me: 0,
-                login_error: '',
-                password_error: ''
-            }
-        },
-        methods: {
-            attemptLogin() {
-                this.login_error = '';
-                this.password_error = '';
+  export default {
+    data () {
+      return {
+        login: '',
+        password: '',
+        remember_me: 0
+      }
+    },
+    computed: {
+      isGuest () { return this.$store.getters.isGuest },
+      current_user () { return this.$store.getters.user.id },
+      login_error: {
+        get () { return this.$store.getters.formError('login_error') },
+        set (value) { this.$store.commit('formError', { property: 'login_error', value: value }) }
+      },
+      password_error: {
+        get () { return this.$store.getters.formError('password_error') },
+        set (value) { this.$store.commit('formError', { property: 'password_error', value: value }) }
+      }
+    },
+    methods: {
+      attemptLogin() {
+        this.login_error = ''
+        this.password_error = ''
 
-                if (!this.login.length) {
-                    this.login_error = 'Username cannot be blank.';
-                }
-
-                if (!this.password.length) {
-                    this.password_error = 'Password cannot be blank.';
-                }
-
-                if(this.password_error.length === 0 && this.login_error.length === 0) {
-                    // eslint-disable-next-line no-undef
-                    axios({
-                        method: 'post',
-                        url: '/api/login',
-                        responseType: 'json',
-                        data: {
-                            username: this.login,
-                            password: this.password,
-                            rememberMe: this.remember_me
-                        }
-                    }).then((response) => {
-                        this.refreshCSRFToken(response.data.token);
-                        if (response.data.result === 'success') {
-                            this.is_logged_in = true;
-                            this.current_user = response.data.user_id;
-                        } else {
-                            if (response.data.messages.password) {
-                                this.password_error = response.data.messages.password;
-                            }
-                            if (response.data.messages.username) {
-                                this.login_error = response.data.messages.username;
-                            }
-                        }
-                })
-                }
-            },
-            refreshCSRFToken(token) {
-                window.axios.defaults.headers.common['X-CSRF-TOKEN'] = token;
-            }
+        if (!this.login.length) {
+          this.login_error = 'Username cannot be blank.'
         }
+        if (!this.password.length) {
+          this.password_error = 'Password cannot be blank.'
+        }
+        if (this.password_error.length === 0 && this.login_error.length === 0) {
+            this.$store.dispatch('attemptLogin', {
+              username: this.login,
+              password: this.password,
+              remember_me: this.remember_me
+            })
+        }
+      }
     }
+  }
 </script>
