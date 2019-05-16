@@ -1,7 +1,7 @@
 const getters = {
   brand: state => state.brand,
   apiUrl: (state) => {
-    return process.env.NODE_ENV === 'production' ? state.baseApiUrl : 'http://dev.test.com/api'
+    return process.env.NODE_ENV === 'production' ? state.baseApiUrl.prod : state.baseApiUrl.dev
   },
   appError: state => state.apiError,
   isGuest: state => state.user.id === 0,

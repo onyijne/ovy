@@ -2,7 +2,10 @@ import Axios from 'axios'
 
 window.axios = Axios
 const state = {
-  baseApiUrl: 'http://dev.test.com/api',
+  baseApiUrl: {
+    dev: 'http://dev.test.com/api',
+    prod: 'http://test.com/api'
+  },
   apiError: null,
   CSRFtoken: window.axios.defaults.headers.common['X-CSRF-TOKEN'],
   menus: {},
