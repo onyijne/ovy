@@ -29,14 +29,17 @@ REQUIREMENTS
 
 ### Development
 
-The minimum requirement is that your Web server supports PHP 7.1.0. and you have node.js, yarn, and composer installed
+The minimum requirement is that your Web server supports PHP 7.1.0. and you have node.js, yarn, vue-cli3 and composer installed
 
 If you do not have **Node.js** installed you can [install it by following the instructions](https://nodejs.org/en/download/)
 
 If you do not have **Yarn** installed you can [install it by following the instructions](https://yarnpkg.com/lang/en/docs/install/)
 
+If you do not have vue-cli installed you may follow the instruction [here](https://cli.vuejs.org/guide/installation.html)
+
 If you do not have [Composer](http://getcomposer.org/), you may install it by following the instructions
 at [getcomposer.org](http://getcomposer.org/doc/00-intro.md#installation-nix).
+
 
 ### Production
 
