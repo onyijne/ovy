@@ -30,15 +30,14 @@ AppAsset::register($this);
 <link rel="icon" type="image/png" sizes="96x96" href="<?php echo Yii::getAlias('@web').'/auto/img/icons/favicon-96x96.png' ?>">
 <link rel="icon" type="image/png" sizes="16x16" href="<?php echo Yii::getAlias('@web').'/auto/img/icons/favicon-16x16.png' ?>">
 <link rel="icon" href="<?php  echo Yii::getAlias('@web').'/auto/favicon.ico' ?>">
+<?php if (!YII_ENV_DEV): ?>
 <link rel="manifest" href="<?php  echo Yii::getAlias('@web').'/auto/manifest.json' ?>">
+<link href=/auto/app.js rel=preload as=script>
+<link href=/auto/js/chunk-vendors.js rel=preload as=script>
+<?php endif; ?>
 <meta name="msapplication-TileColor" content="#ffffff">
 <meta name="msapplication-TileImage" content="<?php echo Yii::getAlias('@web') ?>/auto/img/icons/ms-icon-144x144.png">
-    <?php
-     if (!YII_ENV_DEV) {
-         echo "<link href=/auto/app.js rel=preload as=script>
-         <link href=/auto/js/chunk-vendors.js rel=preload as=script>";
-     }
-     $this->registerCsrfMetaTags() ?>
+    <?php $this->registerCsrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
 </head>
