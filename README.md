@@ -75,7 +75,9 @@ CONFIGURATION
 Please, check the [Yii 2 Basic Project Template](https://github.com/yiisoft/yii2-app-basic#configuration) and [Vue.js](https://cli.vuejs.org/config/) configuration sections.
 
 
-You would also need to edit certain values in **vue.config.js** file like `outputDir` and `devServer.proxy.target` and in **store/state.js** `baseApiUrl.dev` & `baseApiUrl.prod` **USE IGNITO MODE DURING DEVELOPMENT TO AVOID CACHING ISSUE**
+You would also need to edit certain values in **vue.config.js** file like `outputDir` and `devServer.proxy.target` and in **store/state.js** file like `baseApiUrl.dev` & `baseApiUrl.prod` **USE IGNITO MODE DURING DEVELOPMENT TO AVOID CACHING ISSUE** 
+
+You might want to adjust some values in the **manifest.json** file when in production
 
 CREATE VUE.JS TEMPLATE
 ----------------------
