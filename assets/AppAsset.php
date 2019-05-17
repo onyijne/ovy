@@ -20,13 +20,19 @@ class AppAsset extends AssetBundle
     public $basePath = '@webroot';
     public $baseUrl = '@web';
     public $css = [
-      //  'css/site.css',
-    //    'assets/style.css'
     ];
     public $js = [
-        'auto/app.js',
-        'auto/js/chunk-vendors.js'
+        'auto/app.js'
     ];
     public $depends = [
     ];
+
+    public function init ()
+    {
+      parent::init();
+      if(!YII_ENV_DEV){
+        $this->js[] = 'auto/js/chunk-vendors.js';
+        $this->js[] = 'auto/service-worker.js';
+      }
+    }
 }
