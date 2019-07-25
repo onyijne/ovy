@@ -34,10 +34,10 @@ tests/_support/_generated
 
 #webpack generated files
 web/assets/*
-web/auto
+web/auto/*
 
 #node modules
-/vue-app/node_modules
+vue-app/node_modules
 
-/web/test.dev-error.log
-/runtime/*
+web/test.dev-error.log
+runtime/*

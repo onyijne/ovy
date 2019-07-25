@@ -1,0 +1,4 @@
+
+#webpack generated files
+web/assets/*
+auto/*

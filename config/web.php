@@ -8,8 +8,9 @@ $config = [
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'aliases' => [
-        '@bower' => '@app/vue-app/node_modules',
-        '@npm'   => '@app/vue-app/node_modules',
+        '@vue' => '@app/vue-app',
+        '@bower' => '@vue/node_modules',
+        '@npm'   => '@vue/node_modules',
     ],
     'components' => [
         'request' => [
