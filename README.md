@@ -63,22 +63,22 @@ INSTALLATION
 
 You can install this project template using the following command:
 
-    ~~~php
-  php composer create-project --prefer-dist --stability=dev onyijne/ovy ovy
-    ~~~
+~~~
+    php composer create-project --prefer-dist --stability=dev onyijne/ovy ovy
+~~~
 
 Then `cd ovy/vue-app` and run `yarn install`
 
 Now you should be able to access the application through the following URL, assuming `ovy` is the directory
 directly under the Web root. **NEVER TRY THIS IN PRODUCTION**
 
-    ~~~
+~~~
 http://localhost/ovy/web/
-    ~~~
+~~~
 
-    ~~~
+~~~
 To populate assets use `yarn dev` during developement and `yarn build` for production
-    ~~~
+~~~
 
 CONFIGURATION
 -------------
@@ -93,25 +93,25 @@ CREATE VUE.JS TEMPLATE
 ----------------------
 
 You can run console command to get a basic vue.js template for your components
-    ~~~php
+~~~
 php yii make/template --path=app/pages/TestComponent.vue
-    ~~~
+~~~
 
 It will create a file TestComponent.vue with the following content
 
-    ```php
- <template>
-     <div>
+```php
+    <template>
+         <div>
  
-     </div>
- </template>
+         </div>
+     </template>
  
- <script>
-     export default {
-         data() {
+     <script>
+         export default {
+           data() {
              return {
              }
-         },
+           },
          mounted: function () {
  
          },
@@ -121,9 +121,9 @@ It will create a file TestComponent.vue with the following content
          watch: {
  
          }
-     }
- </script>
-    ``` 
+       }
+     </script>
+``` 
 
 
 CONTRIBUTING
