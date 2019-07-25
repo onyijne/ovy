@@ -12,9 +12,10 @@ OVY
     <h1 align="center">Yii 2 + Vue.js + Onsen-UI Project Template</h1>
     <br>
 </p>
+
 This is a skeleton [Onsen UI](https://onsen.io/) and [Vue.js](https://vuejs.org/) application integrated with [Yii 2](http://www.yiiframework.com/) as a backend and view fallback.
 
-The template was built using vue-cli 3, Vuex support and contains examples of using Onsen UI with Vue.js and Yii2, with the ability to rapidly develop a native looking ajax powered app with CSRF enabled.
+The template was built using vue-cli 3, has Vuex, on Vue-router support and contains examples of using Onsen UI with Vue.js and Yii2, with the ability to rapidly develop a native looking ajax powered app with CSRF enabled.
 
 Assets management is done via npm.
 
