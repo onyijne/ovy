@@ -1,4 +1,5 @@
 import Vue from 'vue'
+import axios from 'axios'
 import router from './router'
 import store from './store'
 import VueOnsen from 'vue-onsenui'
@@ -11,13 +12,14 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 import 'onsenui/css/onsenui.css'
 import 'onsenui/css/onsen-css-components.css'
 
+Vue.config.productionTip = false
+
 Vue.use(VueOnsen)
 Vue.use(BootstrapVue)
 Vue.use(VueSweetalert2)
+Vue.prototype.$axios = axios
 
 require('./bootstrap')
-
-Vue.config.productionTip = false
 
 window.app = new Vue({
   el: '#app',

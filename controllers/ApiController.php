@@ -108,4 +108,10 @@ class ApiController extends Controller
             return ['result' => 'error', 'messages' => $model->getFirstErrors()];
         }
     }
+
+    public function actionVideos()
+    {
+        $goo = new \app\models\Google();
+        return [$goo->getVideos()];
+    }
 }

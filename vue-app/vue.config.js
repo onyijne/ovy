@@ -17,7 +17,7 @@ module.exports = {
   devServer: {
     proxy: {
       '^/api': {
-        target: 'dev.sajflow.com',
+        target: 'dev.test.com',
         ws: true,
         changeOrigin: true
       },
