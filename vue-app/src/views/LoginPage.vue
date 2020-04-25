@@ -102,7 +102,8 @@
             style="color:#999;"
           >
             You may login with <strong>admin/admin</strong> or <strong>demo/demo</strong>.<br>
-            To modify the username/password, please check out the code <code>app\models\User::$users</code>.
+            To modify the username/password, please check out the code
+            <code>app\models\User::$users</code>.
           </div>
         </div>
       </div>
@@ -111,45 +112,45 @@
 </template>
 
 <script>
-  export default {
-    data () {
-      return {
-        login: '',
-        password: '',
-        remember_me: 0
-      }
+export default {
+  data() {
+    return {
+      login: '',
+      password: '',
+      remember_me: 0,
+    };
+  },
+  computed: {
+    isGuest() { return this.$store.getters.isGuest; },
+    current_user() { return this.$store.getters.user.id; },
+    login_error: {
+      get() { return this.$store.getters.formError('login_error'); },
+      set(value) { this.$store.commit('formError', { property: 'login_error', value }); },
     },
-    computed: {
-      isGuest () { return this.$store.getters.isGuest },
-      current_user () { return this.$store.getters.user.id },
-      login_error: {
-        get () { return this.$store.getters.formError('login_error') },
-        set (value) { this.$store.commit('formError', { property: 'login_error', value: value }) }
-      },
-      password_error: {
-        get () { return this.$store.getters.formError('password_error') },
-        set (value) { this.$store.commit('formError', { property: 'password_error', value: value }) }
-      }
+    password_error: {
+      get() { return this.$store.getters.formError('password_error'); },
+      set(value) { this.$store.commit('formError', { property: 'password_error', value }); },
     },
-    methods: {
-      attemptLogin() {
-        this.login_error = ''
-        this.password_error = ''
+  },
+  methods: {
+    attemptLogin() {
+      this.login_error = '';
+      this.password_error = '';
 
-        if (!this.login.length) {
-          this.login_error = 'Username cannot be blank.'
-        }
-        if (!this.password.length) {
-          this.password_error = 'Password cannot be blank.'
-        }
-        if (this.password_error.length === 0 && this.login_error.length === 0) {
-            this.$store.dispatch('attemptLogin', {
-              username: this.login,
-              password: this.password,
-              remember_me: this.remember_me
-            })
-        }
+      if (!this.login.length) {
+        this.login_error = 'Username cannot be blank.';
       }
-    }
-  }
+      if (!this.password.length) {
+        this.password_error = 'Password cannot be blank.';
+      }
+      if (this.password_error.length === 0 && this.login_error.length === 0) {
+        this.$store.dispatch('attemptLogin', {
+          username: this.login,
+          password: this.password,
+          remember_me: this.remember_me,
+        });
+      }
+    },
+  },
+};
 </script>

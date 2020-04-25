@@ -5,37 +5,40 @@
         <div class="jumbotron center">
           <h1>OVY Template</h1>
           <p class="lead">
-            Onsen, Vue & Yii template 
+            Onsen, Vue & Yii template
           </p>
         </div>
       </div>
-      <div class="col-12"></div>
+      <div
+        ref="result"
+        class="col-12"
+      >
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 
-  export default {
-    name: 'HomePage',
-    data () {
-      return {}
+export default {
+  name: 'HomePage',
+  data() {
+    return {};
+  },
+  methods: {
+    getVideos() {
+      this.$axios.get(`${this.$store.getters.apiUrl}/videos`)
+        .then((res) => this.displayResult(JSON.stringify(res.data)))
+        .catch((error) => {
+          console.log(error.message);
+        });
     },
-    mounted () {
-      this.getVideos()
+    displayResult(data) {
+      this.$refs.result.innerHTML = data;
     },
-    methods: {
-      getVideos () {
-        this.$axios.get(`${this.$store.getters.apiUrl}/videos`)
-          .then(res => console.log(res.data)
-          ).catch(error => {
-            console.log(error.message)
-          })
-      }
-    }
-  }
+  },
+};
 </script>
 <style lang='css' scoped>
   .home{height: auto;}
 </style>
-

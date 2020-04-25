@@ -22,16 +22,14 @@ class AppAsset extends AssetBundle
     public $css = [
     ];
     public $js = [
+        'auto/js/chunk-vendors.js',
         'auto/app.js'
-    ];
-    public $depends = [
     ];
 
     public function init ()
     {
       parent::init();
       if(!YII_ENV_DEV){
-        $this->js[] = 'auto/js/chunk-vendors.js';
         $this->js[] = 'auto/service-worker.js';
       }
     }

@@ -29,19 +29,19 @@ export default {
   props: {
     title: {
       type: String,
-      default: 'OVY'
-    }
+      default: 'OVY',
+    },
   },
-  data () {
+  data() {
     return {
       query: '',
-      showSearchInput: false
-    }
+      showSearchInput: false,
+    };
   },
-  methods : {
-    toggleMenu : () => { this.$emit('toggleMenu') }
-  }
-}
+  methods: {
+    toggleMenu: () => { this.$emit('toggleMenu'); },
+  },
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

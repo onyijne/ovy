@@ -65,3 +65,10 @@ RewriteCond %{REQUEST_URI} !^/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
 RewriteCond %{REQUEST_URI} !^/\.well-known/acme-challenge/[0-9a-zA-Z_-]+$
 RewriteRule ^(.*)$ index.php [F,L]
 
+# Header set Access-Control-Allow-Origin '*'
+Header set Access-Control-Allow-Headers 'Content-Type, Authorization'
+Header Set Access-Control-Allow-Methods 'OPTIONS, POST, GET'
+Header Set Access-Control-Allow-Credentials true
+#Header Set Access-Control-Max-Age 3000
+Header Set Vary Origin
+

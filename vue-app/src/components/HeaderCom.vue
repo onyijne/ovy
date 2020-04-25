@@ -54,18 +54,18 @@
 export default {
   name: 'HeaderCom',
   computed: {
-    pages () {
-      return this.$store.getters.appMenus
+    pages() {
+      return this.$store.getters.appMenus;
     },
-    brand () { return this.$store.getters.brand },
-    isGuest () { return this.$store.getters.isGuest },
+    brand() { return this.$store.getters.brand; },
+    isGuest() { return this.$store.getters.isGuest; },
   },
   methods: {
-    isActiveMenu (path) {
-      return window.location.pathname === path
-    }
-  }
-}
+    isActiveMenu(path) {
+      return window.location.pathname === path;
+    },
+  },
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

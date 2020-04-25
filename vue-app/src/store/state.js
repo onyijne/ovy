@@ -1,10 +1,10 @@
-import Axios from 'axios'
+import Axios from 'axios';
 
-window.axios = Axios
+window.axios = Axios;
 const state = {
   baseApiUrl: {
     dev: 'http://dev.test.com/api',
-    prod: 'http://test.com/api'
+    prod: 'http://test.com/api',
   },
   apiError: null,
   CSRFtoken: window.axios.defaults.headers.common['X-CSRF-TOKEN'],
@@ -13,28 +13,28 @@ const state = {
     name: 'OVY',
     email: 'mail@domain.com',
     phone: '08012345678',
-    address: 'Internet Space'
+    address: 'Internet Space',
   },
   user: {
     id: 0,
     username: '',
     email: '',
-    sid: ''
+    sid: '',
   },
   utils: {
     platform: '',
     orientation: '',
     screenSize: '',
     country: '',
-    state: ''
+    state: '',
   },
   form: {
     type: '',
     action: '',
     data: {},
     errors: {},
-    submitted: false
-  }
-}
+    submitted: false,
+  },
+};
 
-export default state
+export default state;

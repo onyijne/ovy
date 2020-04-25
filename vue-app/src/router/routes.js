@@ -1,20 +1,16 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
+import Vue from 'vue';
+import VueRouter from 'vue-router';
 
-Vue.use(VueRouter)
+Vue.use(VueRouter);
 
-var routes = [
+const routes = [
   { path: '/', component: () => import('../views/HomePage.vue'), name: 'home' },
   { path: '/login', component: () => import('../views/LoginPage.vue'), name: 'login' },
   { path: '/contact', component: () => import('../views/ContactPage.vue'), name: 'contact' },
-  {
-    path: '/about',
-    name: 'about',
-    component: () => import('../views/AboutPage.vue')
-  }
-]
+  { path: '/about', component: () => import('../views/AboutPage.vue'), name: 'about' },
+];
 
 export default new VueRouter({
   mode: 'history',
-  routes
-})
+  routes,
+});

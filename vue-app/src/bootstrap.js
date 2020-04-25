@@ -3,18 +3,18 @@
  * to our Yii back-end. This library automatically handles sending the
  * CSRF token as a header based on the value of the "XSRF" token cookie.
  */
-import Axios from 'axios'
-import Vue from 'vue'
-import onsenui from 'onsenui'
+import Axios from 'axios';
+import Vue from 'vue';
+import onsenui from 'onsenui';
 
-window.Vue = Vue
-window.axios = Axios
-window.onsenui = onsenui
+window.Vue = Vue;
+window.axios = Axios;
+window.onsenui = onsenui;
 
-Vue.prototype.axios = Axios
-Vue.prototype.$http = Axios
+Vue.prototype.axios = Axios;
+Vue.prototype.$http = Axios;
 
-window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest'
+window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /**
  * Next we will register the CSRF Token as a common header with Axios so that
@@ -22,10 +22,10 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest'
  * a simple convenience so we don't have to attach every token manually.
  */
 
-let token = document.head.querySelector('meta[name="csrf-token"]')
+const csrfToken = document.head.querySelector('meta[name="csrf-token"]');
 
-if (token) {
-  window.axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content
+if (csrfToken) {
+  window.axios.defaults.headers.common['X-CSRF-TOKEN'] = csrfToken.content;
 } else {
-  console.error('CSRF token not found.')
+  console.error('CSRF token not found.');
 }

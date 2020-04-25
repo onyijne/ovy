@@ -1,7 +1,7 @@
 <template>
   <div v-show="isActive">
     <slot />
-  </div>    
+  </div>
 </template>
 
 <script>
@@ -9,20 +9,20 @@ export default {
   name: 'Tab',
   props: {
     name: { type: Boolean, required: true },
-    selected: { type: Boolean, default: false}
+    selected: { type: Boolean, default: false },
   },
-  data () {
+  data() {
     return {
-      isActive: false
-    }
+      isActive: false,
+    };
   },
   computed: {
-    href () {
-      return '#' + this.name.toLowerCase().replace(/ /g, '-')
-    }
+    href() {
+      return `#${this.name.toLowerCase().replace(/ /g, '-')}`;
+    },
   },
-  mounted () {
-    this.isActive = this.selected
-  }
-}
+  mounted() {
+    this.isActive = this.selected;
+  },
+};
 </script>
